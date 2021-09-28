@@ -1,0 +1,34 @@
+	Exporter version: 4.6.1, Blender version: 2.76 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used:
+		selected layers only:  false
+		flat shading entire scene:  false
+		inline textures:  false
+		texture directory:  /Applications/MAMP/htdocs/babylonjs-impactjs-marketjs-platform/media/scenes/
+	Python World class constructor completed
+	processing begun of mesh:  LaserSpawner:laser-spawner.js
+		processing begun of Standard material:  Material.004
+			Diffuse texture found "Texture.005"
+				Image texture found, type:  diffuseTexture, mapped using: "UVMap"
+	WARNING: Error encountered processing image file:  , Error:  '/Applications/MAMP/htdocs/babylonjs-impactjs-marketjs-platform/media/scenes/tiles.jpg' and '/Applications/MAMP/htdocs/babylonjs-impactjs-marketjs-platform/media/scenes/tiles.jpg' are the same file
+		num positions      :  28
+		num normals        :  28
+		num uvs            :  56
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  Cube
+		registered as also a user of material:  Material.004
+		num positions      :  50
+		num normals        :  50
+		num uvs            :  100
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of camera (FreeCamera):  Camera:game-camera.js
+	processing begun of light (HEMI):  Hemi
+	processing begun of light (POINT):  Point
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 0.0079 secs
