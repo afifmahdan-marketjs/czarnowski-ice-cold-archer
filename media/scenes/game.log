@@ -1,7 +1,0 @@
-Exporter version: 6.2.3, Blender version: 2.80 (sub 75)
-========= An error was encountered =========
-  File "C:\Users\Kite Victory\AppData\Roaming\Blender Foundation\Blender\2.80\scripts\addons\babylon_js\json_exporter.py", line 51, in execute
-    self.inlineTextures = self.settings.inlineTextures
-ERROR:  'NoneType' object has no attribute 'inlineTextures'
-========= end of processing =========
-elapsed time:  0 min, 0.0021 secs

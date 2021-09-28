@@ -1,0 +1,11 @@
+{"producer":{"name":"Blender","version":"2.82 (sub 7)","exporter_version":"6.4.1","file":"game_scene.babylon"},
+"autoClear":true,"clearColor":[0.0509,0.0509,0.0509],"gravity":[0,-9.81,0],
+"materials":[],
+"multiMaterials":[],
+"skeletons":[],
+"meshes":[],
+"morphTargetManagers":[],
+"cameras":[{"name":"Camera","id":"Camera","position":[250,75,0],"rotation":[0.1745,-1.5708,0],"fov":0.7994,"minZ":0.1,"maxZ":5000,"speed":1,"inertia":0.9,"checkCollisions":false,"applyGravity":false,"ellipsoid":[0.2,0.9,0.2],"cameraRigMode":0,"interaxial_distance":0.0637,"type":"UniversalCamera"}],"activeCameraID":"Camera",
+"lights":[{"name":"Light","id":"Light","type":0,"position":[375.9383,68.1545,1.0055],"range":500,"intensityMode":0,"intensity":1,"diffuse":[1,1,1],"specular":[0,0,0],"radius":0.1}],
+"shadowGenerators":[]
+}
