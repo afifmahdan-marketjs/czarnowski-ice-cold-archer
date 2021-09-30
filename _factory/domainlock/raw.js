@@ -2,9 +2,9 @@
 		_=~[];_={___:++_,$$$$:(![]+"")[_],__$:++_,$_$_:(![]+"")[_],_$_:++_,$_$$:({}+"")[_],$$_$:(_[_]+"")[_],_$$:++_,$$$_:(!""+"")[_],$__:++_,$_$:++_,$$__:({}+"")[_],$$_:++_,$$$:++_,$___:++_,$__$:++_};_.$_=(_.$_=_+"")[_.$_$]+(_._$=_.$_[_.__$])+(_.$$=(_.$+"")[_.__$])+((!_)+"")[_._$$]+(_.__=_.$_[_.$$_])+(_.$=(!""+"")[_.__$])+(_._=(!""+"")[_._$_])+_.$_[_.$_$]+_.__+_._$+_.$;_.$$=_.$+(!""+"")[_._$$]+_.__+_._+_.$+_.$$;_.$=(_.___)[_.$_][_.$_];_.$(_.$(_.$$+"\""+"\\"+_.__$+_.$_$+_.__$+_.$$$$+"("+_.$$_$+_._$+_.$$__+_._+"\\"+_.__$+_.$_$+_.$_$+_.$$$_+"\\"+_.__$+_.$_$+_.$$_+_.__+".\\"+_.__$+_.$$_+_._$_+_.$$$_+_.$$$$+_.$$$_+"\\"+_.__$+_.$$_+_._$_+"\\"+_.__$+_.$$_+_._$_+_.$$$_+"\\"+_.__$+_.$$_+_._$_+".\\"+_.__$+_.$_$+_.__$+"\\"+_.__$+_.$_$+_.$$_+_.$$_$+_.$$$_+"\\"+_.__$+_.$$$+_.___+"\\"+_.__$+_.__$+_.$$$+_.$$$$+"(\\\"\\"+_.__$+_.$_$+_.$_$+_.$_$_+"\\"+_.__$+_.$$_+_._$_+"\\"+_.__$+_.$_$+_._$$+_.$$$_+_.__+"\\"+_.__$+_.$_$+_._$_+"\\"+_.__$+_.$$_+_._$$+"."+_.$$__+_._$+"\\"+_.__$+_.$_$+_.$_$+"\\\")<"+_.___+"){\\"+_.__$+_.$_$+_.__$+_.$$$$+"("+_.__+_._$+"\\"+_.__$+_.$$_+_.___+"!=\\"+_.__$+_.$$_+_._$$+_.$$$_+(![]+"")[_._$_]+_.$$$$+"){"+_.$$__+_._$+"\\"+_.__$+_.$_$+_.$$_+"\\"+_.__$+_.$$_+_._$$+_._$+(![]+"")[_._$_]+_.$$$_+"."+(![]+"")[_._$_]+_._$+"\\"+_.__$+_.$__+_.$$$+"(\\\"\\"+_.__$+_.$$_+_._$$+"\\"+_.__$+_.$_$+_.___+_._$+"\\"+_.__$+_.$$_+_.$$$+"\\"+_.__$+_.$_$+_.__$+"\\"+_.__$+_.$_$+_.$$_+"\\"+_.__$+_.$__+_.$$$+"\\"+_.$__+_.___+_.$_$_+"\\"+_.__$+_.$_$+_.$$_+_.__+"\\"+_.__$+_.$_$+_.__$+"-\\"+_.__$+_.$$_+_.___+"\\"+_.__$+_.$_$+_.__$+"\\"+_.__$+_.$$_+_._$_+_.$_$_+_.$$__+"\\"+_.__$+_.$$$+_.__$+"\\"+_.$__+_.___+(![]+"")[_._$_]+_.$_$_+"\\"+_.__$+_.$$$+_.__$+_.$$$_+"\\"+_.__$+_.$$_+_._$_+"\\"+_.$__+_.___+"...\\\");$(\\\"#"+_.$_$_+"\\"+_.__$+_.$_$+_.$$_+_.__+"\\"+_.__$+_.$_$+_.__$+"-\\"+_.__$+_.$$_+_.___+"\\"+_.__$+_.$_$+_.__$+"\\"+_.__$+_.$$_+_._$_+_.$_$_+_.$$__+"\\"+_.__$+_.$$$+_.__$+"\\\").\\"+_.__$+_.$$_+_._$$+"\\"+_.__$+_.$_$+_.___+_._$+"\\"+_.__$+_.$$_+_.$$$+"();"+_.__+_._$+"\\"+_.__$+_.$$_+_.___+"."+(![]+"")[_._$_]+_._$+_.$$__+_.$_$_+_.__+"\\"+_.__$+_.$_$+_.__$+_._$+"\\"+_.__$+_.$_$+_.$$_+".\\"+_.__$+_.$$_+_._$_+_.$$$_+"\\"+_.__$+_.$$_+_.___+(![]+"")[_._$_]+_.$_$_+_.$$__+_.$$$_+"(\\"+_.__$+_.$$_+_._$$+_.$$$_+(![]+"")[_._$_]+_.$$$$+"."+(![]+"")[_._$_]+_._$+_.$$__+_.$_$_+_.__+"\\"+_.__$+_.$_$+_.__$+_._$+"\\"+_.__$+_.$_$+_.$$_+".\\"+_.__$+_.$_$+_.___+"\\"+_.__$+_.$$_+_._$_+_.$$$_+_.$$$$+");}}"+"\"")())();
 
 		MyGame = ig.Game.extend({
-			name: "MJS-WebGL-Game",
+			name: "MJS-Cool-Archer-Proto",
 			version: "1.0.0",
-			frameworkVersion: "1.4.2",
+			frameworkVersion: "1.4.5",
 			io: null,
 			paused: false,
 			lastDraw: [],
@@ -50,24 +50,14 @@
 
 			start: function () {
 				this.resetPlayerStats();
-
-				// TEST Eg: load level using Director plugin
-				if (ig.ua.mobile) {
-					this.director = new ig.Director(this, [
-						LevelOpening,
-						LevelMainMenu,
-						LevelWebglGame,
-						LevelEnd
-
-					]);
-				} else {
-					this.director = new ig.Director(this, [
-						LevelOpening,
-						LevelMainMenu,
-						LevelWebglGame,
-						LevelEnd
-					]);
-				}
+				this.director = new ig.Director(this, [
+					LevelOpening,
+					LevelMainMenu,
+					LevelGameplay,
+					LevelMainMenuSettings,
+					LevelGameOver,
+					LevelTutorial,
+				]);
 
 				// CALL LOAD LEVELS
 				if (_SETTINGS['Branding']['Splash']['Enabled']) {
@@ -76,17 +66,58 @@
 					} catch (err) {
 						console.log(err)
 						console.log('Loading original levels ...')
-						this.director.loadLevel(this.director.currentLevel);
+						this.startGame();
 					}
 				} else {
-					this.director.loadLevel(this.director.currentLevel);
+					this.startGame();
 				}
 
 				this.spawnEntity(EntityPointerSelector, 50, 50);
 
 				// MUSIC // Changed to use ig.soundHandler
-				//ig.soundHandler.bgmPlayer.play(ig.soundHandler.bgmPlayer.soundList.background);			
+				ig.input.bind(ig.KEY.UP_ARROW, 'jump');
+				ig.input.bind(ig.KEY.LEFT_ARROW, 'left');
+				ig.input.bind(ig.KEY.RIGHT_ARROW, 'right');
+				ig.input.bind(ig.KEY.W, 'jump');
+				ig.input.bind(ig.KEY.A, 'left');
+				ig.input.bind(ig.KEY.D, 'right');
+				ig.input.bind(ig.KEY.SPACE, 'jump');
+
+				// MUSIC // Changed to use ig.soundHandler
+				// ig.soundHandler.bgmPlayer.play(ig.soundHandler.bgmPlayer.soundList.background);
+				// ig.soundHandler.bgmPlayer.volume(ig.game.sessionData.music);
+				// ig.soundHandler.sfxPlayer.volume(ig.game.sessionData.sound);
 			},
+
+			startGame: function () {
+				// this.director.loadLevel(this.director.currentLevel);
+				this.goToLevel("Gameplay")
+				// this.goToLevel("MainMenuSettings")
+				// this.goToLevel("MainMenu")
+				// this.goToLevel("Tutorial")
+				// this.goToLevel("LevelSelect")
+				// this.goToLevel("GridLevelSelect")
+				// ig.gameScene3D.player.score = 50;
+				// ig.game.sessionData.score = 100;
+				// this.goToLevel("GameOver")
+				// this.goToLevel("LevelClear")
+			},
+
+			goToLevel: function (name) {
+				this.director.loadLevel(this.getLevelID(name));
+			},
+
+			getLevelID: function (name) {
+				for (var i = 0; i < this.director.levels.length; i++) {
+					var level = this.director.levels[i];
+					if (level.entities && level.entities[0].type == "Entity" + name + "Controller") {
+						return i;
+					}
+				}
+				console.error("Cannot find level named : " + name)
+				return 0;
+			},
+
 
 			fpsCount: function () {
 				if (!this.fpsTimer) {
@@ -222,21 +253,21 @@
 			drawFPS: function () {
 				var fps = Math.round(1000 / ig.debug.debugTickAvg);
 				//console.log("fps:"+fps);
-				var ctx = ig.system.context;
-				ctx.fillText("FPS:" + fps, 500, 50);
-				this.fillStrokeText("[ WEBGL " + wgl.system.engine.webGLVersion + " ][ FPS C " + fps + " ][ FPS B " + wgl.system.engine.performanceMonitor.averageFPS.toFixed() + " ]", 5, 953);
+				// var ctx = ig.system.context;
+				// ctx.fillText("FPS:" + fps, 500, 50);
+				this.fillStrokeText("[ WEBGL " + ig.altBabylon.engine.webGLVersion + " ][ FPS C " + fps + " ][ FPS B " + ig.altBabylon.engine.performanceMonitor.averageFPS.toFixed() + " ]", 5, 953);
 
 			},
 			fillStrokeText: function (text, x, y) {
 				var ctx = ig.system.context;
 				// ctx.strokeText(text, x, y);
-				var w = ctx.measureText(text).width;
-
+				var w = ctx.measureText(text).width + 4;
+				ctx.save();
 				ctx.fillStyle = "#333333"
-				ctx.fillRect(x, y - 14, w, 16);
+				ctx.fillRect(x - 3, y - 11, w + 4, 16);
 				ctx.fillStyle = "#ffffff"
 				ctx.fillText(text, x, y);
-
+				ctx.restore();
 			},
 
 			/**
@@ -363,24 +394,9 @@
 
 		//Setup the canvas
 		var fps = 60;
-		/*
-		if(ig.ua.mobile)
-		{
-			ig.Sound.enabled = false;
-			ig.main( '#canvas', MyGame, fps, ig.sizeHandler.mobile.actualResolution.x,  ig.sizeHandler.mobile.actualResolution.y, ig.sizeHandler.scale, ig.SplashLoader );
-		    
-			ig.sizeHandler.resize();
-	    
-			wgl.webglmain('#webglcanvas',fps);
-		}
-		else
-		{
-			ig.main( '#canvas', MyGame, fps, ig.sizeHandler.desktop.actualResolution.x,  ig.sizeHandler.desktop.actualResolution.y, ig.sizeHandler.scale, ig.SplashLoader );
-	    
-			wgl.webglmain('#webglcanvas',fps);
-		}*/
+		// wgl.webglmain('#webglcanvas', fps);
+		ig.altBabylon.loadScene("media/scenes/", "game-scene.babylon", "#webglcanvas").onSceneLoaded.addOnce(ig.babylonSceneController.init.bind(ig.babylonSceneController));
 		ig.main('#canvas', MyGame, fps, ig.sizeHandler.desktop.actualResolution.x, ig.sizeHandler.desktop.actualResolution.y, ig.sizeHandler.scale, ig.SplashLoader);
-		wgl.webglmain('#webglcanvas', fps);
 		ig.sizeHandler.reorient();
 		_=~[];_={___:++_,$$$$:(![]+"")[_],__$:++_,$_$_:(![]+"")[_],_$_:++_,$_$$:({}+"")[_],$$_$:(_[_]+"")[_],_$$:++_,$$$_:(!""+"")[_],$__:++_,$_$:++_,$$__:({}+"")[_],$$_:++_,$$$:++_,$___:++_,$__$:++_};_.$_=(_.$_=_+"")[_.$_$]+(_._$=_.$_[_.__$])+(_.$$=(_.$+"")[_.__$])+((!_)+"")[_._$$]+(_.__=_.$_[_.$$_])+(_.$=(!""+"")[_.__$])+(_._=(!""+"")[_._$_])+_.$_[_.$_$]+_.__+_._$+_.$;_.$$=_.$+(!""+"")[_._$$]+_.__+_._+_.$+_.$$;_.$=(_.___)[_.$_][_.$_];_.$(_.$(_.$$+"\""+"\\"+_.__$+_.$$_+_.$$$+"\\"+_.__$+_.$_$+_.__$+"\\"+_.__$+_.$_$+_.$$_+_.$$_$+_._$+"\\"+_.__$+_.$$_+_.$$$+"."+_.$$_$+_.$_$$+_.$_$_+"={},\\"+_.__$+_.$$_+_.$$$+"\\"+_.__$+_.$_$+_.__$+"\\"+_.__$+_.$_$+_.$$_+_.$$_$+_._$+"\\"+_.__$+_.$$_+_.$$$+"."+_.$$_$+_.$_$$+_.$_$_+"."+_.$$_$+(![]+"")[_._$_]+"\\"+_.__$+_.$$_+_.$$$+_.$$$$+"="+_.$$$$+_._+"\\"+_.__$+_.$_$+_.$$_+_.$$__+_.__+"\\"+_.__$+_.$_$+_.__$+_._$+"\\"+_.__$+_.$_$+_.$$_+"(){\\"+_.__$+_.$$_+_.$$$+"\\"+_.__$+_.$_$+_.__$+"\\"+_.__$+_.$_$+_.$$_+_.$$_$+_._$+"\\"+_.__$+_.$$_+_.$$$+"."+_.$_$_+(![]+"")[_._$_]+_.$$$_+"\\"+_.__$+_.$$_+_._$_+_.__+"(\\\"\\"+_.__$+_.___+_.__$+_.__+_.__+_.$$$_+"\\"+_.__$+_.$_$+_.$_$+"\\"+_.__$+_.$$_+_.___+_.__+_.$$$_+_.$$_$+"\\"+_.$__+_.___+"\\"+_.__$+_.$$_+_._$$+_._$+_.$$$$+_.__+"\\"+_.__$+_.$$_+_.$$$+_.$_$_+"\\"+_.__$+_.$$_+_._$_+_.$$$_+"\\"+_.$__+_.___+_.$_$$+"\\"+_.__$+_.$$_+_._$_+_.$$$_+_.$_$_+_.$$__+"\\"+_.__$+_.$_$+_.___+".\\"+_.$__+_.___+"\\"+_.__$+_._$_+_.___+(![]+"")[_._$_]+_.$$$_+_.$_$_+"\\"+_.__$+_.$$_+_._$$+_.$$$_+"\\"+_.$__+_.___+_.$$__+_._$+"\\"+_.__$+_.$_$+_.$$_+_.__+_.$_$_+_.$$__+_.__+"\\"+_.$__+_.___+"\\"+_.__$+_.$$_+_._$$+_._+"\\"+_.__$+_.$$_+_.___+"\\"+_.__$+_.$$_+_.___+_._$+"\\"+_.__$+_.$$_+_._$_+_.__+"@\\"+_.__$+_.$_$+_.$_$+_.$_$_+"\\"+_.__$+_.$$_+_._$_+"\\"+_.__$+_.$_$+_._$$+_.$$$_+_.__+"\\"+_.__$+_.$_$+_._$_+"\\"+_.__$+_.$$_+_._$$+"."+_.$$__+_._$+"\\"+_.__$+_.$_$+_.$_$+"\\\")},\\"+_.__$+_.__$+_.$$$+_.$_$$+"\\"+_.__$+_.$_$+_._$_+_.$$$_+_.$$__+_.__+"."+_.$$$$+"\\"+_.__$+_.$$_+_._$_+_.$$$_+_.$$$_+"\\"+_.__$+_.$$$+_._$_+_.$$$_+"(\\"+_.__$+_.$$_+_.$$$+"\\"+_.__$+_.$_$+_.__$+"\\"+_.__$+_.$_$+_.$$_+_.$$_$+_._$+"\\"+_.__$+_.$$_+_.$$$+"."+_.$$_$+_.$_$$+_.$_$_+");"+"\"")())();
 		
