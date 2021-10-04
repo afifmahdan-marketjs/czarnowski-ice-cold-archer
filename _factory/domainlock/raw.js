@@ -168,12 +168,14 @@
 			pauseGame: function () {
 				ig.system.stopRunLoop.call(ig.system);
 				ig.game.tweens.onSystemPause();
+				ig.babylonSceneController.paused = true;
 				console.log('Game Paused');
 			},
 
 			resumeGame: function () {
 				ig.system.startRunLoop.call(ig.system);
 				ig.game.tweens.onSystemResume();
+				ig.babylonSceneController.paused = false;
 				console.log('Game Resumed');
 			},
 
