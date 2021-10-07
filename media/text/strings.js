@@ -28,13 +28,11 @@ var _STRINGS = {
 	},
 
 	"Game":{
-		"SelectPlayer":"Select Player",
-		"Win":"You win!",
-		"Lose":"You lose!",
-		"Score":"Score",
-		"Time":"Time",
-        "metricTimeLeft":"TimeLeft:",
-        "metricScore":"Score:"
+		"Settings": "Settings",
+		"GameOver": "Game Over",
+		"Paused": "Paused",
+		"Score": "score",
+		"Best": "best",
 	},
 
 	"Results":{
