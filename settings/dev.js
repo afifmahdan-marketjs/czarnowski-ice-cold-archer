@@ -127,4 +127,22 @@ var _SETTINGS = {
 	'Gamecenter': {
 		'Enabled': false,
 	},
+
+	'Versioning': {
+		'Version': '1.0.0',
+		'Build': '1',
+
+		'DisplayLog': true,
+		'DrawVersion': true,
+
+		'FontSize': '16px',
+		'FontFamily': 'Arial',
+		'FillStyle': '#000000'
+	}
 };
+
+if (typeof _SETTINGS.Versioning !== 'undefined' && _SETTINGS.Versioning !== null) {
+	if (_SETTINGS.Versioning.DisplayLog === true) {
+		console.log('Release: v' + _SETTINGS.Versioning.Version + '+build.' + _SETTINGS.Versioning.Build);
+	}
+}
