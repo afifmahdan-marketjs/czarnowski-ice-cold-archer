@@ -26,7 +26,7 @@ class JJEncoder(object):
 		for i in range(len(text)):
 			n = ord(text[i])
 			if (n == 0x22 or n == 0x5c):
-				 s += "\\\\\\" + chr(unpack("b", text[i])[0])
+				s += "\\\\\\" + chr(unpack("b", text[i])[0])
 			elif ((0x21 <= n and n <= 0x2f) or (0x3A <= n and n <= 0x40) or ( 0x5b <= n and n <= 0x60 ) or ( 0x7b <= n and n <= 0x7f)):
 				s += text[i]
 

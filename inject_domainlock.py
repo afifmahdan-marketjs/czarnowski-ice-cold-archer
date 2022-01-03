@@ -1,11 +1,11 @@
 import sys
 
-print "Injecting domainlock ..."
-print "Source file: " + sys.argv[1] # The domainlocked file
-print "Destination file: " + sys.argv[2] # The game.js
+print ("Injecting domainlock ...")
+print ("Source file: " + sys.argv[1]) # The domainlocked file
+print ("Destination file: " + sys.argv[2]) # The game.js
 
-print "Target start marker: " + sys.argv[3]
-print "Target end marker: " + sys.argv[4]
+print ("Target start marker: " + sys.argv[3])
+print ("Target end marker: " + sys.argv[4])
 
 # Destination
 file1 = open(sys.argv[2])
@@ -37,4 +37,4 @@ file3.write(result2)
 
 file3.close()
 
-print "Domainlock injection done ..."
+print ("Domainlock injection done ...")

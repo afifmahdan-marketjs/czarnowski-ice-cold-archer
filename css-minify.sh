@@ -2,14 +2,11 @@
 #This script was created 17/5/2010 by Paul Tero (www.tero.co.uk/scripts/minify.php) to remove comments
 #and extra spaces from Javascript and CSS files.
 
-#There must be at least 1 argument, which is the CSS and JS files to compress
-if test $# -lt 1; then echo Usage $0 CSS-or-JS-file; exit 1; fi
+#There must be at least 2 arguments, which is the CSS and JS files to compress
+if test $# -lt 2; then echo Usage $0 Input-CSS-or-JS-file Output-CSS-or-JS-file; exit 1; fi
 
 #If the file name is something like myfile-raw.js, then it will output automatically to myfile.js, removing the -raw.
-outfile=`echo $1 | sed -e "s|-raw.\(.*\)$|.\1|"`
-if test "$1" = "$outfile"; then outfile=/dev/stdout; 
-else echo Minimising $1 and outputting to $outfile;
-fi;
+outfile=`echo $2 | sed -e "s|-raw.\(.*\)$|.\1|"`
 
 #This command removes comments from CSS and Javascript files using sed. First it replaces /**/ and /*\*/ with 
 #/~~/ and /~\~/ as these comments are used as CSS hacks and should stay in the file. Then it removes /*...*/ style

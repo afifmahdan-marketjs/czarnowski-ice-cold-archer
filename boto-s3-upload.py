@@ -26,8 +26,8 @@ BUCKET = conn.get_bucket(BUCKET_NAME)
 BUCKET_LOCATION = BUCKET.get_location()
 
 def usage():
-	print 'Options and arguments:'
-	print '-a --all	:  [uploads everything in folder]'
+	print ('Options and arguments:')
+	print ('-a --all	:  [uploads everything in folder]')
 	
 def uploadResultToS3(bucket,game_folder_name,srcDir):
 	
@@ -36,7 +36,7 @@ def uploadResultToS3(bucket,game_folder_name,srcDir):
 		opts, args = getopt.getopt(sys.argv[1:], "hanl:v", ["help","all","new","language"])
 	except getopt.GetoptError as err:
 		# print help information and exit:
-		print str(err) # will print something like "option -a not recognized"
+		print (str(err)) # will print something like "option -a not recognized"
 		usage()
 		sys.exit(2)
 	
@@ -54,12 +54,12 @@ def uploadResultToS3(bucket,game_folder_name,srcDir):
 			sys.exit()
 		elif o in ("-n", "--new"):
 			upload_all = False
-			print "upload all set True"	
+			print ("upload all set True")
 		elif o in ("-a", "--all"):
 			upload_all = True
-			print "upload all set True"				
+			print ("upload all set True")		
 		elif o in ("-l", "--language"):
-			print "language chosen:" + a
+			print ("language chosen:" + a)
 			LANGUAGE_CODE = a
 		else:
 			assert False, "unhandled option"
@@ -77,13 +77,13 @@ def uploadResultToS3(bucket,game_folder_name,srcDir):
 	seconds_freshness = 86400/2
 	
 	if upload_all:
-		print 'uploading ALL files in folders ...'
+		print ('uploading ALL files in folders ...')
 	else:		
-		print 'uploading files < ' + str(day_freshness) + ' days' + ' and < ' + str(seconds_freshness/3600) + ' hours old ...'
+		print ('uploading files < ' + str(day_freshness) + ' days' + ' and < ' + str(seconds_freshness/3600) + ' hours old ...')
 	
 	
 	""" WALKING THE BUCKET """
-	print 'preparing to walk the bucket named ' + b.name + '...'
+	print ('preparing to walk the bucket named ' + b.name + '...')
 			
 	for path,dir,files in os.walk(srcDir):
 		for file in files:			
@@ -102,10 +102,10 @@ def uploadResultToS3(bucket,game_folder_name,srcDir):
 						upload(k,b,game_folder_name,path,file.decode('utf8'),srcDir,LANGUAGE_CODE)
 						
 def upload(k,b,game_folder_name,path,file,srcDir,language_code):		
-	print 'Preparing bucket for upload'	
+	print ('Preparing bucket for upload')
 	k.key = language_code + '/' + game_folder_name + "/" + os.path.relpath(os.path.join(path,file),srcDir)
 	k.key = re.sub(r'\\', '/', k.key) #added to avoid forward slash in k.key
-	print 'sending ' + file + ' to https://s3-' + BUCKET_LOCATION + '.amazonaws.com/'  + b.name + '/' + k.key + ' ...'
+	print ('sending ' + file + ' to https://s3-' + BUCKET_LOCATION + '.amazonaws.com/'  + b.name + '/' + k.key + ' ...')
 	
 	headers = {
 		'Cache-Control': 'max-age=7776000'
@@ -114,10 +114,10 @@ def upload(k,b,game_folder_name,path,file,srcDir,language_code):
 	k.set_contents_from_filename(os.path.join(path,file), headers)
 
 	if path.find('_factory') >=0:
-		print 'file set as private ...'
+		print ('file set as private ...')
 		k.set_acl('private')				
 	else:
-		print 'file set as public ...'
+		print ('file set as public ...')
 		k.set_acl('public-read')						
 
 		

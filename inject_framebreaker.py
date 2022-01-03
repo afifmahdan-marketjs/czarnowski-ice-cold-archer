@@ -1,8 +1,8 @@
 import sys
 import jjencode
 
-print "Injecting framebreaker ..."
-print "Destination file: " + sys.argv[1]
+print ("Injecting framebreaker ...")
+print ("Destination file: " + sys.argv[1])
 
 file1 = open(sys.argv[1])
 file1_contents = file1.read()

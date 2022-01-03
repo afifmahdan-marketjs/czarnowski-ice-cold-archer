@@ -1,8 +1,8 @@
 import sys
 import jjencode
 
-print "Injecting anti-tampering protection codes ..."
-print "Destination file: " + sys.argv[1]
+print ("Injecting anti-tampering protection codes ...")
+print ("Destination file: " + sys.argv[1])
 
 file1 = (sys.argv[1])
 
