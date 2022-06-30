@@ -110,6 +110,7 @@
 				// this.goToLevel("LevelSelect")
 				// this.goToLevel("GridLevelSelect")
 				// ig.gameScene3D.player.score = 50;
+				// ig.lastScore = 50;
 				// ig.game.sessionData.score = 100;
 				// this.goToLevel("GameOver")
 				// this.goToLevel("LevelClear")

@@ -28,11 +28,17 @@ var _STRINGS = {
 	},
 
 	"Game":{
-		"Settings": "Settings",
-		"GameOver": "Game Over",
-		"Paused": "Paused",
-		"Score": "score",
-		"Best": "best",
+		"Settings": "SETTINGS",
+		"GameOver": "GAME OVER",
+		"Paused": "PAUSED",
+		"Score": "SCORE",
+		"Best": "BEST",
+		"BgmOn": "BGM ON",
+		"BgmOff": "BGM OFF",
+		"SfxOn": "SFX ON",
+		"SfxOff": "SFX OFF",
+		"Miss": "MISS!",
+		"Bullseye": "BULLSEYE!",
 	},
 
 	"Results":{
