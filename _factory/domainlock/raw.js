@@ -13,7 +13,7 @@
 			score: 0,
 
 			sfxDefaultVolume: 0.7,
-			bgmDefaultVolume: 0.3,
+			bgmDefaultVolume: 0.7,
 
 			init: function () {
 				this.tweens = new ig.TweensHandler();
@@ -96,7 +96,6 @@
 				ig.input.bind(ig.KEY.SPACE, 'jump');
 
 				// MUSIC // Changed to use ig.soundHandler
-				// ig.soundHandler.bgmPlayer.play(ig.soundHandler.bgmPlayer.soundList.background);
 				ig.soundHandler.bgmPlayer.volume(ig.game.sessionData.music);
 				ig.soundHandler.sfxPlayer.volume(ig.game.sessionData.sound);
 			},
