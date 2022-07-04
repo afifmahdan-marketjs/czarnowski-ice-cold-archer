@@ -168,7 +168,7 @@ compile_test_game (){
     --language_in=ECMASCRIPT5
     echo "Done!"
 
-    cat lib/babylon/babylon.4.2.0.js game.js > tmp && mv tmp game.js
+    cat lib/babylon/babylon.js game.js > tmp && mv tmp game.js
     
     echo "Compiling game.css for testing ..."
     bash css-append.sh

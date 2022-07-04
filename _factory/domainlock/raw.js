@@ -2,7 +2,7 @@
 		this.FRAMEBREAKER;
 
 		MyGame = ig.Game.extend({
-			name: "MJS-Cool-Archer-Prototype",
+			name: "MJS-Cool-Archer",
 			version: "1.0.0",
 			frameworkVersion: "1.4.5",
 			io: null,
@@ -13,7 +13,7 @@
 			score: 0,
 
 			sfxDefaultVolume: 0.7,
-			bgmDefaultVolume: 0.7,
+			bgmDefaultVolume: 1,
 
 			init: function () {
 				this.tweens = new ig.TweensHandler();
@@ -248,7 +248,7 @@
 
 			draw: function () {
 				this.parent();
-				this.drawFPS();
+				if (ig.debug) this.drawFPS();
 				//Optional - to use , debug console , e.g : ig.game.debugCL("debug something");
 				//hold click on screen for 2s to enable debug console
 				//this.drawDebug();

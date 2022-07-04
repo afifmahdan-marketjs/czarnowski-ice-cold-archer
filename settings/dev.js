@@ -88,7 +88,7 @@ var _SETTINGS = {
 
 	'DeveloperBranding': { // MarketJS Branding
 		'Splash': {
-			'Enabled': false,
+			'Enabled': true,
 		},
 		'Logo': {
 			'Enabled': false,
@@ -115,7 +115,7 @@ var _SETTINGS = {
 	},
 
 	'MoreGames': {
-		'Enabled': true,
+		'Enabled': false,
 		'Link': 'http://www.marketjs.com/game/links/mobile',
 		'NewWindow': true,	// open link in new window, although this behavior can be override by browsers preference
 	},
@@ -130,7 +130,7 @@ var _SETTINGS = {
 
 	'Versioning': {
 		'Version': '1.0.1',
-		'Build': '16',
+		'Build': '21',
 
 		'DisplayLog': true,
 		'DrawVersion': true,

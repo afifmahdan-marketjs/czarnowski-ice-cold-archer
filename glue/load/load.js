@@ -30,7 +30,7 @@ loadScriptsSynchronously([
 
 	//"lib/babylon/cannon.js",
 	//"lib/babylon/oimo.js",
-	"lib/babylon/babylon.4.2.0.js",
+	"lib/babylon/babylon.js",
 
 	// SETTINGS
 	'settings/dev.js',
