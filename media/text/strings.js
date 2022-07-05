@@ -39,6 +39,7 @@ var _STRINGS = {
 		"SfxOff": "SFX OFF",
 		"Miss": "MISS!",
 		"Bullseye": "BULLSEYE!",
+		"Tutorial": "Tap and drag to aim,\nrelease to fire",
 	},
 
 	"Results":{
