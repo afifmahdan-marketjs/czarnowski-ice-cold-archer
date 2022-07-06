@@ -130,7 +130,7 @@ var _SETTINGS = {
 
 	'Versioning': {
 		'Version': '1.0.1',
-		'Build': '24',
+		'Build': '25',
 
 		'DisplayLog': true,
 		'DrawVersion': true,
