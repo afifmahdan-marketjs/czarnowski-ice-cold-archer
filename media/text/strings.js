@@ -39,7 +39,16 @@ var _STRINGS = {
 		"SfxOff": "SFX OFF",
 		"Miss": "MISS!",
 		"Bullseye": "BULLSEYE!",
+		"Continue": "CONTINUE?",
+		"Revive": "Get extra 3 arrows\nand retry?",
+		"Yes": "Yes",
+		"No": "No",
 		"Tutorial": "Tap and drag to aim,\nrelease to fire",
+		"Reward": "REWARD",
+		"RewardSuccess": "Reward Success!",
+		"RewardFail": "Reward is\nnot available,\nPlease try again\nlater",
+		"Sweet": "Sweet!",
+		"Okay": "Okay",
 	},
 
 	"Results":{
