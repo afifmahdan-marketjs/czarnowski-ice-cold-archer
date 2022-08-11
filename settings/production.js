@@ -24,7 +24,7 @@ var _SETTINGS = {
 	'Ad':{
 		'Mobile':{
 			'Preroll':{
-				'Enabled':true,	
+				'Enabled':false,	
 				'Duration':5,
 				'Width':300,
 				'Height':250,
@@ -130,7 +130,7 @@ var _SETTINGS = {
 
 	'Versioning': {
 		'Version': '1.0.0',
-		'Build': '1',
+		'Build': '5',
 
 		'DisplayLog': true,
 		'DrawVersion': true,

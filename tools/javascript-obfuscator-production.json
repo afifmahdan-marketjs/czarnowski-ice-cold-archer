@@ -1,12 +1,12 @@
 {
    "domainLock":[
-      "cdn-factory.marketjs.com"
+      "cdn-factory.marketjs.com"      
    ],
    "compact":true,
    "controlFlowFlattening":false,
    "deadCodeInjection":false,
    "debugProtection":false,
-   "debugProtectionInterval":false,
+   "debugProtectionInterval":0,
    "disableConsoleOutput":true,
    "identifierNamesGenerator":"hexadecimal",
    "log":false,

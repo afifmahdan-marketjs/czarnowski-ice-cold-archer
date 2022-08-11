@@ -45,7 +45,7 @@ var _STRINGS = {
 		"No": "No",
 		"Tutorial": "Tap and drag to aim,\nrelease to fire",
 		"Reward": "REWARD",
-		"RewardSuccess": "Reward Success!",
+		"RewardSuccess": "Reward Obtained!",
 		"RewardFail": "Reward is\nnot available,\nPlease try again\nlater",
 		"Sweet": "Sweet!",
 		"Okay": "Okay",

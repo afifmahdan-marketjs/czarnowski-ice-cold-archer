@@ -332,8 +332,7 @@ done
 OPTIND=1 # Reset as getopts has been used previously in the shell.
 while getopts "$optstring" opt
 do
-  case $opt in
-    case $opt in
+  case $opt in    
     h)
         usage
       ;;
