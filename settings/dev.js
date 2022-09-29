@@ -130,12 +130,12 @@ var _SETTINGS = {
 
 	'Versioning': {
 		'Version': '1.1.0',
-		'Build': '2',
+		'Build': '3',
 
 		'DisplayLog': true,
 		'DrawVersion': true,
 
-		'FontSize': '16px',
+		'FontSize': '32px',
 		'FontFamily': 'Arial',
 		'FillStyle': '#000000'
 	}
