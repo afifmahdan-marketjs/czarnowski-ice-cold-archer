@@ -135,7 +135,7 @@ var _SETTINGS = {
 		'DisplayLog': true,
 		'DrawVersion': true,
 
-		'FontSize': '32px',
+		'FontSize': '64px',
 		'FontFamily': 'Arial',
 		'FillStyle': '#000000'
 	}
