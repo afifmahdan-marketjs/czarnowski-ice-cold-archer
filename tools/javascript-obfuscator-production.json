@@ -8,7 +8,7 @@
    "debugProtection":false,
    "debugProtectionInterval":0,
    "disableConsoleOutput":true,
-   "identifierNamesGenerator":"hexadecimal",
+   "identifierNamesGenerator":"mangled",
    "log":false,
    "renameGlobals":false,
    "rotateStringArray":true,
