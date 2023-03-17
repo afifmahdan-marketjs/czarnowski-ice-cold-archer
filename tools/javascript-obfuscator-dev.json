@@ -1,15 +1,10 @@
 {
-   "domainLock":[
-      ".amazonaws.com",
-      "localhost"
-   ],
    "compact":true,
    "controlFlowFlattening":false,
    "deadCodeInjection":false,
    "debugProtection":false,
-   "debugProtectionInterval":false,
    "disableConsoleOutput":false,
-   "identifierNamesGenerator":"mangled",
+   "identifierNamesGenerator":"hexadecimal",
    "log":false,
    "renameGlobals":false,
    "rotateStringArray":true,

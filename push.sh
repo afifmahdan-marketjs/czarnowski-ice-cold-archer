@@ -417,8 +417,8 @@ do
         bake
         prep_production ${LANGUAGE}
         compile_test_game
-        # secure_regular
-         secure_strong
+        secure_regular
+        #  secure_strong
         inject_burst_cache_version_tag
       ;;
     n)
